@@ -15,3 +15,11 @@
   --accent-color: #ff8dcb;
   --title-main-color: #ffc2e6;
 }
+
+.theme-light .rec {
+  display: none;
+}
+
+.theme-light .rec-contour {
+  display: none;
+}
