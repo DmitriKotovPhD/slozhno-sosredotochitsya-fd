@@ -56,6 +56,7 @@
   width: fit-content;
   justify-self: flex-end;
   align-self: center;
+  color: var(--decorated-accent-color);
 }
 
 .header__theme-menu-button {
@@ -63,16 +64,15 @@
   background: none;
   border: none;
   padding: 0px 13px 3px;
-  line-height: 23px;
   text-transform: lowercase;
-  color: var(--accent-color);
+  color: currentColor;
 }
 
 .header__theme-menu-button:hover::before {
   content: "";
   position: absolute;
   inset: 0;
-  outline: 1px solid var(--accent-color);
+  outline: 1px solid currentColor;
   opacity: .4;
 }
 
@@ -87,7 +87,7 @@
 
 .header__theme-menu-button_active {
   pointer-events: none;
-  outline: 1px solid var(--accent-color);
+  outline: 1px solid currentColor;
 }
 
 .content {
@@ -110,7 +110,7 @@
   gap: inherit;
   font-weight: 700;
   font-size: 18px;
-  color: var(--accent-color);
+  color: var(--decorated-accent-color);
 }
 
 .title-main {
@@ -131,7 +131,7 @@
 
 .title-decor_accent {
   background-color: var(--accent-color);
-  color: var(--bg-color);
+  color: var(--title-decor-color);
 }
 
 .title-decor_subtopic {
@@ -160,7 +160,7 @@
   inset-block-start: var(--page-padding);
   display: flex;
   margin-inline-end: 9px;
-  color: var(--accent-color);
+  color: var(--decorated-accent-color);
   font-size: 18px;
   line-height: 26px;
   gap: 9px;
@@ -177,7 +177,7 @@
   width: 9px;
   height: 9px;
   margin: auto;
-  background: var(--accent-color);
+  background-color: currentColor;
   border-radius: 50%;
   box-shadow: 0 0 4px 2px currentColor;
 }
@@ -186,8 +186,8 @@
   position: absolute;
   width: 25px;
   height: 25px;
-  border-top: 1px solid var(--accent-color);
-  border-right: 1px solid var(--accent-color);
+  border-top: 1px solid var(--decorated-accent-color);
+  border-right: 1px solid var(--decorated-accent-color);
 }
 
 .rec-contour_top-right {

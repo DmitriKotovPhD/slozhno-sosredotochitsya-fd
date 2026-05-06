@@ -12,14 +12,12 @@
   --page-bg-image: url(../images/cover-image-light.png);
   --bg-color: #feeef6;
   --main-color: #353430;
+  --decorated-accent-color: var(--main-color);
   --accent-color: #ff8dcb;
   --title-main-color: #ffc2e6;
+  --title-decor-color: var(--main-color);
 }
 
 .theme-light .rec {
-  display: none;
-}
-
-.theme-light .rec-contour {
   display: none;
 }

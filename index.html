@@ -22,11 +22,12 @@
       <span class="rec" aria-hidden="true"></span>
       <span class="rec-contour rec-contour_top-right" aria-hidden="true"></span>
       <span class="rec-contour rec-contour_bottom-left" aria-hidden="true"></span>
-      <nav class="header__theme-menu">
-        <ul class="header__theme-menu-list">
+      <nav class="header__theme-menu" aria-label="Выбор темы оформления">
+        <ul class="header__theme-menu-list" role="menu">
           <li class="header__theme-menu-item">
             <button
               class="header__theme-menu-button header__theme-menu-button_type_light"
+              role="menuitem"
             >
               День
             </button>
@@ -34,6 +35,7 @@
           <li class="header__theme-menu-item">
             <button
               class="header__theme-menu-button header__theme-menu-button_active header__theme-menu-button_type_auto"
+              role="menuitem"
               disabled
             >
               Авто
@@ -42,6 +44,7 @@
           <li class="header__theme-menu-item">
             <button
               class="header__theme-menu-button header__theme-menu-button_type_dark"
+              role="menuitem"
             >
               Неон
             </button>
