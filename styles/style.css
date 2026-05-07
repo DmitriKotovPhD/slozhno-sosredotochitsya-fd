@@ -13,7 +13,9 @@
   font-size: 18px;
   line-height: 23.4px;
   letter-spacing: 0;
-  padding: 0 var(--page-padding);
+  display: flex;
+  flex-direction: column;
+  gap: calc(4 * var(--page-padding));
 }
 
 .link {
@@ -37,9 +39,8 @@
   min-block-size: 667px;
   display: grid;
   position: relative;
-  padding: var(--page-padding) 0;
+  padding: var(--page-padding);
   place-items: center;
-  margin-block-end: 40px;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr min-content 1fr;
 }
@@ -94,6 +95,7 @@
 .content {
   display: grid;
   gap: 50px;
+  padding: 0 var(--page-padding);
 }
 
 .content-section__list-item {
@@ -162,7 +164,7 @@
 
 .rec {
   position: absolute;
-  inset-inline-end: 0;
+  inset-inline-end: var(--page-padding);
   inset-block-start: var(--page-padding);
   display: var(--rec-display);
   margin-inline-end: 9px;
@@ -197,12 +199,12 @@
 }
 
 .rec-contour_top-right {
-  inset-inline-end: 0;
+  inset-inline-end: var(--page-padding);
   inset-block-start: var(--page-padding);
 }
 
 .rec-contour_bottom-left {
-  inset-inline-start: 0;
+  inset-inline-start: var(--page-padding);
   inset-block-end: var(--page-padding);
   transform: rotate(180deg);
 }
@@ -211,10 +213,6 @@
   display: grid;
   gap: 20px;
   align-items: start;
-}
-
-.content-section:last-of-type {
-  margin-block-end: calc(3 * var(--page-padding));
 }
 
 .content-section__list {
@@ -232,7 +230,7 @@
   display: grid;
   place-content: center;
   position: relative;
-  padding: var(--page-padding) 0;
+  padding: var(--page-padding);
 }
 
 @media (width >= 768px) {
@@ -241,8 +239,8 @@
     --page-padding: 20px;
   }
 
-  .header {
-    margin-block-end: 60px;
+  .page {
+    gap: calc(3 * var(--page-padding));
   }
 
   .title-main {
@@ -320,7 +318,7 @@
     align-items: start;
   }
 
-  /* Эти два правила (см. ниже) правило не надо делать,
+  /* Эти два правила (см. ниже) не надо делать,
   но шаблон кривоват для >= 1024px, так что пусть будет.
   Объединять эти два класса в один не буду,
   т.к. вдруг автор потом передумает и захочет сменить способ разбиения у одной из секций
