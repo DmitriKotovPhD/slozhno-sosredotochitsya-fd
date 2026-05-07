@@ -2,6 +2,7 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
+
 :root {
   --page-bg-image: url(../images/cover-image.png);
   --page-padding: 10px;
@@ -11,4 +12,5 @@
   --decorated-accent-color: var(--accent-color);
   --title-main-color: #db00ff;
   --title-decor-color: var(--bg-color);
+  --rec-display: flex;
 }

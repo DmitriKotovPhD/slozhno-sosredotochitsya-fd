@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="dark light">
     <link rel="stylesheet" href="./styles/globals.css">
     <link rel="stylesheet" href="./fonts/fonts.css">
@@ -52,20 +52,19 @@
         </ul>
       </nav>
       <h1 class="title-main title-main_shadow-header">no focus</h1>
-      <p class="title-decor header__subtitle title-decor_accent">
-        Что делать, когда не можешь делать ничего
-        <br/>Или почему нам так сложно сконцентрироваться, особенно когда очень надо
+      <p class="title-decor header__subtitle title-decor_accent">Что делать, когда не можешь делать ничего
+        Или почему нам так сложно сконцентрироваться, особенно когда очень надо
       </p>
     </header>
     <main class="content">
       <!-- Описание проблемы -->
       <section class="content-section content-section_why">
         <h2 class="title-decor">Почему сосредоточиться так сложно</h2>
-        <ul class="content-section__list">
+        <ul class="content-section__list" role="list">
           <li class="content-section__list-item">
             <h3 class="title-decor title-decor_accent">Многозадачность</h3>
             <p>
-              Особенно сложно сосредоточиться, когда задач много и все они — важные. Где же легендарная многозадачность, когда она так нужна вам (и всем нанимающим менеджерам этого мира)? А дело в том, что её просто не существует. 
+              Особенно сложно сосредоточиться, когда задач много и все они — важные. Где же легендарная многозадачность, когда она так нужна вам (и всем нанимающим менеджерам этого мира)? А дело в том, что её просто не существует.
               Исследователи <a href="https://dana.org/news-and-insights/" target="_blank" class="link link_decorated">выяснили</a>, что мозгу тяжело концентрироваться даже на двух делах одновременно. А когда в поле внимания попадает несколько важных задач, организм паникует и выделяет кортизол и адреналин — «гормоны стресса». Из-за этого мы работаем невнимательно: ошибаемся и быстро устаём.
             </p>
           </li>
@@ -80,7 +79,7 @@
       <!-- Создание страха у пользователя -->
       <section class="content-section content-section_what">
         <h2 class="title-decor">Что снижает концентрацию внимания?</h2>
-        <ul class="content-section__list">
+        <ul class="content-section__list" role="list">
           <li class="content-section__list-item">
             <h3 class="title-decor title-decor_accent">Концентрация</h3>
             <p>
@@ -106,7 +105,7 @@
         <h2 class="title-decor">Как концентрироваться лучше, чем золотая рыбка (то есть дольше трёх секунд)</h2>
         <article class="content-section__nested-section">
         <h3 class="title-decor title-decor_accent">5 простых (на самом деле не очень) советов</h3>
-        <ul class="content-section__list">
+        <ul class="content-section__list" role="list">
           <li class="content-section__list-item">
             <h4 class="title-decor title-decor_subtopic title-decor_accent">Представьте небо и облака</h4>
             <p>
@@ -143,25 +142,16 @@
       <!-- Галерея -->
       <section class="content-section gallery-section">
         <h2 class="title-decor title-decor_accent">А можно в картинках?</h2>
-        <div class="gallery">
-          
+        <div class="gallery" aria-label="Галерея">
             <img src="./images/sunset.png" class="gallery__image" alt="Закат солнца" loading="lazy">
-          
-          
             <img src="./images/ice-cream.png" class="gallery__image" alt="Мороженое фигня" loading="lazy">
-          
-          
             <img src="./images/tape.png" class="gallery__image" alt="Кассета" loading="lazy">
-          
-          
             <img src="./images/books.png" class="gallery__image" alt="Книги" loading="lazy">
-          
-        
             <img src="./images/street.png" class="gallery__image" alt="Улица" loading="lazy">
-          
         </div>
       </section>
     </main>
+    <!-- Подвал сайта -->
     <footer class="footer">
         <h2 class="title-main title-main_shadow-footer">focus</h2>
         <span class="rec-contour rec-contour_top-right" aria-hidden="true"></span>

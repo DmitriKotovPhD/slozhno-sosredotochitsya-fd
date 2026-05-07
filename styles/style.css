@@ -2,8 +2,8 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
-  background: var(--page-bg-image) no-repeat center,
-              var(--bg-color);
+  background: var(--page-bg-image, #000028) no-repeat center;
+  background-color: var(--bg-color, #000);
   background-size: cover;
   background-attachment: fixed;
   color: var(--main-color);
@@ -21,11 +21,11 @@
 }
 
 .link:hover {
-  border-bottom: 1px solid var(--main-color);
+  border-block-end: 1px solid var(--main-color);
 }
 
 .link:focus-visible {
-  outline: 1px solid var(--main-color);
+  outline: 1px solid currentColor;
 }
 
 .link_decorated {
@@ -33,14 +33,15 @@
 }
 
 .header {
-  min-height: 100dvb;
+  block-size: 100dvb;
+  min-block-size: 667px;
   display: grid;
   position: relative;
   padding: var(--page-padding) 0;
   place-items: center;
   margin-block-end: 40px;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: 1fr min-content 1fr;
 }
 
 .header__theme-menu-list {
@@ -53,7 +54,7 @@
   position: relative;
   z-index: 10;
   display: flex;
-  width: fit-content;
+  inline-size: fit-content;
   justify-self: flex-end;
   align-self: center;
   color: var(--decorated-accent-color);
@@ -63,7 +64,7 @@
   position: relative;
   background: none;
   border: none;
-  padding: 0px 13px 3px;
+  padding: 0 13px 3px;
   text-transform: lowercase;
   color: currentColor;
 }
@@ -82,7 +83,7 @@
 
 .header__theme-menu-button:focus-visible {
   outline: none;
-  border-bottom: 1px solid currentColor;
+  border-block-end: 1px solid currentColor;
 }
 
 .header__theme-menu-button_active {
@@ -103,6 +104,10 @@
 .content-section__nested-section {
   display: grid;
   gap: inherit;
+}
+
+.header__subtitle {
+  white-space: pre-line;
 }
 
 .title-decor {
@@ -158,7 +163,7 @@
   position: absolute;
   inset-inline-end: 0;
   inset-block-start: var(--page-padding);
-  display: flex;
+  display: var(--rec-display);
   margin-inline-end: 9px;
   color: var(--decorated-accent-color);
   font-size: 18px;
@@ -174,8 +179,8 @@
 .rec::after {
   content: "";
   display: block;
-  width: 9px;
-  height: 9px;
+  inline-size: 9px;
+  block-size: 9px;
   margin: auto;
   background-color: currentColor;
   border-radius: 50%;
@@ -184,8 +189,8 @@
 
 .rec-contour {
   position: absolute;
-  width: 25px;
-  height: 25px;
+  inline-size: 25px;
+  block-size: 25px;
   border-top: 1px solid var(--decorated-accent-color);
   border-right: 1px solid var(--decorated-accent-color);
 }
@@ -208,7 +213,7 @@
 }
 
 .content-section:last-of-type {
-  margin-block-end: calc(4 * var(--page-padding));
+  margin-block-end: calc(3 * var(--page-padding));
 }
 
 .content-section__list {
@@ -221,7 +226,8 @@
 }
 
 .footer {
-  min-height: 100dvb;
+  block-size: 100dvb;
+  min-block-size: 667px;
   display: grid;
   place-content: center;
   position: relative;
@@ -229,17 +235,20 @@
 }
 
 @media (width >= 768px) {
+
   :root {
     --page-padding: 20px;
   }
 
   .header {
-    grid-template-rows: repeat(2, 2fr) repeat(2, 1fr);
     margin-block-end: 60px;
   }
 
   .title-main {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header .title-main {
     margin-inline-start: calc(var(--page-padding) * -1);
   }
 
@@ -248,32 +257,33 @@
   }
 
   .header__subtitle {
-    width: 50%;
+    inline-size: 50%;
     justify-self: end;
   }
 
   .gallery {
     grid-template-columns: repeat(3, minmax(229px, auto));
-    grid-template-rows: repeat(3, minmax(229px, auto));
+    grid-template-rows: auto;
   }
 
   .gallery__image:nth-child(1) {
-    grid-column: 1 / 3;
+    grid-column: 1 / span 2;
+    grid-row: 1;
   }
 
   .gallery__image:nth-child(2) {
-    grid-row: 1 / 3;
+    grid-row: 1 / span 2;
     grid-column: 3;
   }
 
   .gallery__image:nth-child(3) {
-    grid-row: 2 / -1;
+    grid-row: 2 / span 2;
     grid-column: 1;
   }
 
   .gallery__image:nth-child(5) {
+    grid-column: 2 / span 2;
     grid-row: 3;
-    grid-column: 2 / -1;
   }
 
   .content {
@@ -290,6 +300,7 @@
 }
 
 @media (width >= 1024px) {
+
   .header__theme-menu {
     justify-self: center;
     align-self: start;
@@ -306,5 +317,25 @@
   .content-section_what .content-section__list {
     grid-template-columns: repeat(auto-fit, minmax(314px, 1fr));
     align-items: start;
+  }
+
+  /* Эти два правила (см. ниже) правило не надо делать,
+  но шаблон кривоват для >= 1024px, так что пусть будет.
+  Объединять эти два класса в один не буду,
+  т.к. вдруг автор потом передумает и захочет сменить способ разбиения у одной из секций
+  */
+  .content-section_why {
+    grid-template-columns: 1fr 2.1fr;
+  }
+
+  .content-section_howto {
+    grid-template-columns: 1fr 2.1fr;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+
+  :root {
+    --page-bg-image: url(../images/cover-image-dark.png);
   }
 }
