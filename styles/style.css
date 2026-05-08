@@ -213,19 +213,6 @@
   box-shadow: 0 0 4px 2px currentColor;
 }
 
-/*
-
-.rec-contour_top-right {
-  inset-inline-end: var(--page-padding);
-  inset-block-start: var(--page-padding);
-}
-
-.rec-contour_bottom-left {
-  inset-inline-start: var(--page-padding);
-  inset-block-end: var(--page-padding);
-  transform: rotate(180deg);
-} */
-
 .content-section {
   display: grid;
   gap: 20px;
