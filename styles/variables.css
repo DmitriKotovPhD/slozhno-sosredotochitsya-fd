@@ -14,3 +14,11 @@
   --title-decor-color: var(--bg-color);
   --rec-display: flex;
 }
+
+
+@media (width >= 768px) {
+
+  :root {
+    --page-padding: 20px;
+  }
+}

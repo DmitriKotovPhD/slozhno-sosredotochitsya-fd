@@ -18,3 +18,10 @@
   --title-decor-color: var(--bg-color);
   --rec-display: flex;
 }
+
+@media (prefers-color-scheme: dark) {
+
+  :root {
+    --page-bg-image: url(../images/cover-image-dark.png);
+  }
+}
